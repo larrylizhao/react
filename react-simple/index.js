@@ -1,19 +1,9 @@
-class React {
-    constructor(props) {
-
-    }
-
-    createElement(tag, attrs, ...childrens) {
-        return {
-            tag,
-            attrs,
-            childrens
-        }
-    }
-}
+import React from './react';
 
 const ele = (
     <div className='active' title='123'>
         Hello <span>React</span>
     </div>
 );
+
+console.log(ele);
