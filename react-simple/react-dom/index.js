@@ -1,12 +1,14 @@
 class ReactDOM {
     render(vnode, container) {
+        return container.appendChild(this._render(vnode));
+    }
+    _render(vnode) {
         if(!vnode){
             return null;
         }
 
         if(typeof vnode === 'string') {
-            const textNode = document.createTextNode(vnode);
-            return container.appendChild(textNode);
+            return document.createTextNode(vnode);
         }
 
         const {tag, attrs} = vnode;
@@ -22,7 +24,7 @@ class ReactDOM {
             this.render(child, dom);
         })
 
-        return container.appendChild(dom);
+        return dom
     }
 
     //设置属性
