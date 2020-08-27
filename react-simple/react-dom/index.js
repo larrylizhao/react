@@ -1,7 +1,10 @@
 class ReactDOM {
+
     render(vnode, container) {
         return container.appendChild(this._render(vnode));
     }
+
+    //虚拟dom转为真实dom,并设置dom属性
     _render(vnode) {
         if(!vnode){
             return null;
@@ -11,16 +14,16 @@ class ReactDOM {
             return document.createTextNode(vnode);
         }
 
-        const {tag, attrs} = vnode;
-        const dom = document.createElement(tag);
-        if(attrs) {
-            Object.keys(attrs).forEach(key => {
-                this.setAttribute(dom, key, attrs[key]);
+        const {type, config} = vnode;
+        const dom = document.createElement(type);
+        if(config) {
+            Object.keys(config).forEach(key => {
+                this.setAttribute(dom, key, config[key]);
             })
         }
 
         //递归渲染子节点
-        vnode.childrens.forEach(child => {
+        vnode.children.forEach(child => {
             this.render(child, dom);
         })
 

@@ -3,11 +3,11 @@ class React {
 
     }
 
-    createElement(tag, attrs, ...childrens) {
+    createElement(type, config, ...children) {
         return {
-            tag,
-            attrs,
-            childrens
+            type,
+            config,
+            children
         }
     }
 }
