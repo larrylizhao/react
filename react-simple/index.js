@@ -20,6 +20,7 @@ const Elef = () => {
     )
 }
 console.log(<Elef title={title}/>);
+//React.createElement(Elef, { title: title });
 
 function Homef() {
     return (
@@ -29,6 +30,7 @@ function Homef() {
     )
 }
 console.log(<Homef title={title}/>)
+//React.createElement(Homef, { title: title });
 
 // 3. 类组件
 class Home {
@@ -41,7 +43,7 @@ class Home {
     }
 }
 console.log(<Home title={title}/>);
-
+//React.createElement(Home, { title: title });
 
 /*
     ReactDOM.render可接收：
@@ -50,5 +52,5 @@ console.log(<Home title={title}/>);
     3. 函数组件
     4. 类组件
  */
-ReactDOM.render(<home name={title}/>, document.querySelector('#root'));
+ReactDOM.render(ele, document.querySelector('#root'));
 //ReactDOM.render('react', document.querySelector('#root'));
