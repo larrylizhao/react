@@ -12,23 +12,23 @@ const ele = (
 console.log(ele);
 
 // 2. 函数组件
-const elef = () => {
+const Elef = () => {
     return (
         <div className='active' title='123'>
             Hello <span>React</span>
         </div>
     )
 }
-console.log(<elef title={title}/>);
+console.log(<Elef title={title}/>);
 
-function home() {
+function Homef() {
     return (
         <div className='active' title='123'>
             Hello <span>React</span>
         </div>
     )
 }
-console.log(<home title={title}/>)
+console.log(<Homef title={title}/>)
 
 // 3. 类组件
 class Home {
