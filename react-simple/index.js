@@ -1,12 +1,15 @@
 import React from './react';
 import ReactDOM from './react-dom';
 
+const title = 'title'
+
 // 1. JSX
 const ele = (
     <div className='active' title='123'>
         Hello <span>React</span>
     </div>
 );
+console.log(ele);
 
 // 2. 函数组件
 const elef = () => {
@@ -16,7 +19,7 @@ const elef = () => {
         </div>
     )
 }
-
+console.log(<elef title={title}/>);
 
 function home() {
     return (
@@ -25,6 +28,7 @@ function home() {
         </div>
     )
 }
+console.log(<home title={title}/>)
 
 // 3. 类组件
 class Home {
@@ -36,9 +40,7 @@ class Home {
         );
     }
 }
-
-const title = 'title'
-console.log(<home name={title}/>);
+console.log(<Home title={title}/>);
 
 
 /*
@@ -50,5 +52,3 @@ console.log(<home name={title}/>);
  */
 ReactDOM.render(<home name={title}/>, document.querySelector('#root'));
 //ReactDOM.render('react', document.querySelector('#root'));
-
-console.log(ele);
