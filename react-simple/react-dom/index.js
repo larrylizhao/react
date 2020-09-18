@@ -10,6 +10,10 @@ class ReactDOM {
             return null;
         }
 
+        if(typeof element === 'number'){
+            element = String(element);
+        }
+
         // 1. 如果element是字符串
         if(typeof element === 'string') {
             // 创建文本节点
